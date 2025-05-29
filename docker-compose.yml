@@ -1,0 +1,32 @@
+services:
+  jmeter:
+    build:
+      context: ./jmeter
+    volumes:
+      - ./jmeter/tests:/tests
+    ports:
+      - "9270:9270"
+    networks:
+      - monitoring
+    command: -n -t /tests/simple.jmx -l /tests/results.jtl
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "5000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - monitoring
+
+networks:
+  monitoring:

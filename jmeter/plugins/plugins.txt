@@ -1,0 +1,2 @@
+kg.apc.plugins.weightedSwitchController
+kg.apc.plugins.customThreadGroups
