@@ -14,8 +14,15 @@
             <stringProp name="Argument.value">${__timeShift(MM/dd/yyyy, ${__time(MM/dd/yyyy)}, P${__Random(1,20)}D,,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8088</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data[luserData]">
@@ -59,7 +66,7 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Module Controller">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="-664109497">WebTours</stringProp>
@@ -68,952 +75,10 @@
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller[1 script]">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller[1 script]" enabled="false">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
-        <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_01_Домашняя_страница" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/WebTours/-37" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=0, i</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Is Signed Off" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="195444184">?signOff=true</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.custom_message"></stringProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/welcome.pl-40" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="signOff" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">signOff</stringProp>
-                    <stringProp name="Argument.value">1</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/nav.pl-44" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="in" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">in</stringProp>
-                    <stringProp name="Argument.value">home</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <BoundaryExtractor guiclass="BoundaryExtractorGui" testclass="BoundaryExtractor" testname="userSession" enabled="true">
-                <stringProp name="BoundaryExtractor.useHeaders">false</stringProp>
-                <stringProp name="BoundaryExtractor.refname">userSession</stringProp>
-                <stringProp name="BoundaryExtractor.lboundary">&lt;input type=&quot;hidden&quot; name=&quot;userSession&quot; value=&quot;</stringProp>
-                <stringProp name="BoundaryExtractor.rboundary">&quot;/&gt;</stringProp>
-                <stringProp name="BoundaryExtractor.default">none</stringProp>
-                <boolProp name="BoundaryExtractor.default_empty_value">false</boolProp>
-                <stringProp name="BoundaryExtractor.match_number">0</stringProp>
-              </BoundaryExtractor>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_02_Логин" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-46" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="userSession" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">userSession</stringProp>
-                    <stringProp name="Argument.value">${userSession}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="username" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">username</stringProp>
-                    <stringProp name="Argument.value">${Login}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="password" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">password</stringProp>
-                    <stringProp name="Argument.value">${Password}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="login.x" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">login.x</stringProp>
-                    <stringProp name="Argument.value">46</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="login.y" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">login.y</stringProp>
-                    <stringProp name="Argument.value">8</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="JSFormSubmit" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">JSFormSubmit</stringProp>
-                    <stringProp name="Argument.value">off</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?in=home</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Origin" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/nav.pl-47" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="page" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">page</stringProp>
-                    <stringProp name="Argument.value">menu</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="in" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">in</stringProp>
-                    <stringProp name="Argument.value">home</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-48" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="intro" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">intro</stringProp>
-                    <stringProp name="Argument.value">true</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Page contains user&apos;s name" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1108754765">Welcome, &lt;b&gt;${Login}&lt;/b&gt;, to the Web Tours reservation pages.</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.custom_message"></stringProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_03_Просмотр_маршрутов" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/welcome.pl-32" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="page" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">page</stringProp>
-                    <stringProp name="Argument.value">itinerary</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/nav.pl-34" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="page" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">page</stringProp>
-                    <stringProp name="Argument.value">menu</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="in" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">in</stringProp>
-                    <stringProp name="Argument.value">itinerary</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=itinerary</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/itinerary.pl-33" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/itinerary.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments"/>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=itinerary</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Page title" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="2074808244">&lt;title&gt;Flights List&lt;/title&gt;
-</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.custom_message"></stringProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="flightsID" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">flightsID</stringProp>
-                <stringProp name="RegexExtractor.regex">name=&quot;flightID&quot; value=\&quot;(\d+-\d+-[A-z]+)\&quot;</stringProp>
-                <stringProp name="RegexExtractor.template">$1$</stringProp>
-                <stringProp name="RegexExtractor.default">none</stringProp>
-                <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
-                <stringProp name="RegexExtractor.match_number">-1</stringProp>
-              </RegexExtractor>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_04_Отмена_покупки" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_04_/cgi-bin/itinerary.pl-39" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/itinerary.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">POST</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">1=on${flightsID_list}&amp;removeFlights.x=42&amp;removeFlights.y=11${cgifields_list}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/itinerary.pl</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="Origin" elementType="Header">
-                    <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Content-Type" elementType="Header">
-                    <stringProp name="Header.name">Content-Type</stringProp>
-                    <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-              <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-                <stringProp name="cacheKey">false</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">def flightsID_string = &quot;&quot;;
-def cgifields_string = &quot;&quot;;
-int flightsID_length = vars.get(&apos;flightsID_matchNr&apos;).toInteger();
-
-for(int i = 1; i &lt;= flightsID_length; i++) {
-	flightsID_string += &apos;&amp;flightID=&apos; + vars.get(&apos;flightsID_&apos; + i + &apos;_g1&apos;);
-	cgifields_string += &apos;&amp;.cgifields=&apos; + i;
-} 
-
-vars.put(&apos;flightsID_list&apos;, flightsID_string);
-vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PreProcessor>
-              <hashTree/>
-            </hashTree>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="1053857168">A total of ${__jexl2(${flightsID_matchNr}-1)} scheduled flights.</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.custom_message"></stringProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_05_Выход" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-          </TransactionController>
-          <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/welcome.pl-53" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="signOff" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">signOff</stringProp>
-                    <stringProp name="Argument.value">1</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/nav.pl-55" enabled="true">
-              <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
-              <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
-              <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
-              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-              <stringProp name="HTTPSampler.method">GET</stringProp>
-              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-              <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-                <collectionProp name="Arguments.arguments">
-                  <elementProp name="in" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">in</stringProp>
-                    <stringProp name="Argument.value">home</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                </collectionProp>
-              </elementProp>
-            </HTTPSamplerProxy>
-            <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-                <collectionProp name="HeaderManager.headers">
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Language" elementType="Header">
-                    <stringProp name="Header.name">Accept-Language</stringProp>
-                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
-                  </elementProp>
-                  <elementProp name="DNT" elementType="Header">
-                    <stringProp name="Header.name">DNT</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Priority" elementType="Header">
-                    <stringProp name="Header.name">Priority</stringProp>
-                    <stringProp name="Header.value">u=4</stringProp>
-                  </elementProp>
-                  <elementProp name="Pragma" elementType="Header">
-                    <stringProp name="Header.name">Pragma</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept" elementType="Header">
-                    <stringProp name="Header.name">Accept</stringProp>
-                    <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
-                  </elementProp>
-                  <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
-                    <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="Cache-Control" elementType="Header">
-                    <stringProp name="Header.name">Cache-Control</stringProp>
-                    <stringProp name="Header.value">no-cache</stringProp>
-                  </elementProp>
-                  <elementProp name="Accept-Encoding" elementType="Header">
-                    <stringProp name="Header.name">Accept-Encoding</stringProp>
-                    <stringProp name="Header.value">gzip, deflate</stringProp>
-                  </elementProp>
-                  <elementProp name="User-Agent" elementType="Header">
-                    <stringProp name="Header.name">User-Agent</stringProp>
-                    <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
-                  </elementProp>
-                </collectionProp>
-              </HeaderManager>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
-        </hashTree>
+        <hashTree/>
       </hashTree>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -1106,22 +171,22 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
         </elementProp>
       </kg.apc.jmeter.threads.SteppingThreadGroup>
       <hashTree>
-        <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller">
+        <com.blazemeter.jmeter.control.WeightedSwitchController guiclass="com.blazemeter.jmeter.control.WeightedSwitchControllerGui" testclass="com.blazemeter.jmeter.control.WeightedSwitchController" testname="bzm - Weighted Switch Controller" enabled="true">
           <boolProp name="IsRandomChoice">false</boolProp>
         </com.blazemeter.jmeter.control.WeightedSwitchController>
         <hashTree/>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="WebTours_Scripts"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="WebTours_Scripts" enabled="true"/>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC01_Логин"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC01_Логин" enabled="true"/>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_01_Домашняя страница">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_01_Домашняя страница" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/WebTours/-10" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -1187,7 +252,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/welcome.pl-13" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -1212,7 +277,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/WebTours/</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/WebTours/</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1256,7 +321,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/nav.pl-17" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -1281,7 +346,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=true</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?signOff=true</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1340,19 +405,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_02_Логин">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_02_Логин" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_02_/cgi-bin/login.pl-19" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -1411,7 +476,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1419,7 +484,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -1463,7 +528,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_02_/cgi-bin/nav.pl-21" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -1495,7 +560,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1539,7 +604,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_02_/cgi-bin/login.pl-20" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -1564,7 +629,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1623,19 +688,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_03_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC01_03_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_03_/cgi-bin/welcome.pl-26" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -1660,7 +725,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1704,7 +769,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_03_/cgi-bin/nav.pl-28" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -1729,7 +794,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?signOff=1</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1788,22 +853,22 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC02_Найти_билет"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC02_Найти_билет" enabled="true"/>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_01_Домашняя_страница">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_01_Домашняя_страница" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_01_/WebTours/-37" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -1869,7 +934,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_01_/cgi-bin/welcome.pl-40" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -1894,7 +959,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -1938,7 +1003,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_01_/cgi-bin/nav.pl-44" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -1963,7 +1028,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?signOff=1</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2022,19 +1087,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_02_Логин">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_02_Логин" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_02_/cgi-bin/login.pl-46" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -2094,7 +1159,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2156,7 +1221,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_02_/cgi-bin/nav.pl-47" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -2188,7 +1253,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2232,7 +1297,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_02_/cgi-bin/login.pl-48" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -2257,7 +1322,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2316,19 +1381,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_03_Переход_к_полетам">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_03_Переход_к_полетам" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_03_/cgi-bin/welcome.pl-84" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -2353,7 +1418,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2397,7 +1462,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_03_/cgi-bin/nav.pl-85" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -2429,7 +1494,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=search</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?page=search</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2473,7 +1538,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_03_/cgi-bin/reservations.pl-86" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -2497,7 +1562,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=search</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?page=search</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2540,7 +1605,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Page has arrive destination " enabled="true">
                 <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-2006877589">&lt;option value=&quot;${arrive}&quot;&gt;${arrive}&lt;/option&gt;</stringProp>
+                  <stringProp name="-1081419381">&lt;option value=&quot;${arrive}&quot;&gt;${arrive}</stringProp>
                 </collectionProp>
                 <stringProp name="Assertion.custom_message"></stringProp>
                 <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -2556,19 +1621,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_04_Выбор_конфигурации_рейса">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_04_Выбор_конфигурации_рейса" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_04_/cgi-bin/reservations.pl-92" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
@@ -2677,7 +1742,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/reservations.pl?page=welcome</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/reservations.pl?page=welcome</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2685,7 +1750,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -2755,19 +1820,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_05_Выбор_полета">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_05_Выбор_полета" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_05_/cgi-bin/reservations.pl-94" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
@@ -2834,7 +1899,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/reservations.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/reservations.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2842,7 +1907,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -2901,19 +1966,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_06_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC02_06_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_06_/cgi-bin/welcome.pl-53" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -2938,7 +2003,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -2982,7 +2047,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC02_06_/cgi-bin/nav.pl-55" enabled="true">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -3007,7 +2072,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?signOff=1</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3056,22 +2121,22 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC03_Покупка_билета"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC03_Покупка_билета" enabled="true"/>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_01_Домашняя страница">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_01_Домашняя страница" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/WebTours/-10" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/WebTours/-10">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3083,7 +2148,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3135,9 +2200,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/cgi-bin/welcome.pl-13" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/cgi-bin/welcome.pl-13">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -3158,11 +2223,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/WebTours/</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/WebTours/</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3204,9 +2269,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/cgi-bin/nav.pl-17" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_01_/cgi-bin/nav.pl-17">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -3290,19 +2355,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_02_Логин">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_02_Логин" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/login.pl-19" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/login.pl-19">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3357,11 +2422,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3369,7 +2434,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -3421,9 +2486,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/nav.pl-21" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/nav.pl-21">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -3451,11 +2516,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3497,9 +2562,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/login.pl-20" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_02_/cgi-bin/login.pl-20">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -3520,11 +2585,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/login.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/login.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3583,19 +2648,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_03_03_Переход_к_полетам">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC_03_03_Переход_к_полетам" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/welcome.pl-84" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/welcome.pl-84">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -3616,11 +2681,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3662,9 +2727,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/nav.pl-85" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/nav.pl-85">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -3692,11 +2757,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=search</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?page=search</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3738,9 +2803,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/reservations.pl-86" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_03_/cgi-bin/reservations.pl-86">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3760,11 +2825,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?page=search</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?page=search</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -3823,19 +2888,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_04_Выбор_конфигурации_рейса">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_04_Выбор_конфигурации_рейса" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_04_/cgi-bin/reservations.pl-92" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_04_/cgi-bin/reservations.pl-92">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
@@ -3940,11 +3005,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/reservations.pl?page=welcome</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/reservations.pl?page=welcome</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -4021,19 +3086,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_05_Выбор_рейса">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_05_Выбор_рейса" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_05_/cgi-bin/reservations.pl-94" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_05_/cgi-bin/reservations.pl-94">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
@@ -4096,11 +3161,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/reservations.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/reservations.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -4108,7 +3173,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -4167,19 +3232,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_06_Купить_билет">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_06_Купить_билет" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_06_/cgi-bin/reservations.pl-96" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_06_/cgi-bin/reservations.pl-96">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/reservations.pl</stringProp>
@@ -4319,11 +3384,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/reservations.pl</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/reservations.pl</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -4331,7 +3396,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                   </elementProp>
                   <elementProp name="Origin" elementType="Header">
                     <stringProp name="Header.name">Origin</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}</stringProp>
                   </elementProp>
                   <elementProp name="DNT" elementType="Header">
                     <stringProp name="Header.name">DNT</stringProp>
@@ -4392,19 +3457,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_07_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC03_07_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_07_/cgi-bin/welcome.pl-26" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_07_/cgi-bin/welcome.pl-26">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -4425,11 +3490,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/nav.pl?page=menu&amp;in=home</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -4471,9 +3536,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_07_/cgi-bin/nav.pl-28" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC03_07_/cgi-bin/nav.pl-28">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -4494,11 +3559,11 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://localhost:1080/cgi-bin/welcome.pl?signOff=1</stringProp>
+                    <stringProp name="Header.value">http://localhost:${port}/cgi-bin/welcome.pl?signOff=1</stringProp>
                   </elementProp>
                   <elementProp name="Accept-Language" elementType="Header">
                     <stringProp name="Header.name">Accept-Language</stringProp>
@@ -4557,7 +3622,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -4570,9 +3635,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/WebTours/-37" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/WebTours/-37">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -4636,9 +3701,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/cgi-bin/welcome.pl-40" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/cgi-bin/welcome.pl-40">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -4705,9 +3770,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/cgi-bin/nav.pl-44" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_01_/cgi-bin/nav.pl-44">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -4791,19 +3856,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_02_Логин">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_02_Логин" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/login.pl-46" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/login.pl-46">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -4913,9 +3978,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/nav.pl-47" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/nav.pl-47">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -4989,9 +4054,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/login.pl-48" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_02_/cgi-bin/login.pl-48">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -5075,19 +4140,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_03_Просмотр_маршрутов">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_03_Просмотр_маршрутов" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/welcome.pl-32" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/welcome.pl-32">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -5146,9 +4211,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/nav.pl-34" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/nav.pl-34">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -5214,9 +4279,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/itinerary.pl-33" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_03_/cgi-bin/itinerary.pl-33">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/itinerary.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -5284,19 +4349,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_04_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC04_04_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_04_/cgi-bin/welcome.pl-53" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_04_/cgi-bin/welcome.pl-53">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -5363,9 +4428,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_04_/cgi-bin/nav.pl-55" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04_04_/cgi-bin/nav.pl-55">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -5449,7 +4514,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -5462,9 +4527,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/WebTours/-37" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/WebTours/-37">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -5528,9 +4593,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/welcome.pl-40" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/welcome.pl-40">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -5597,9 +4662,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/nav.pl-44" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_01_/cgi-bin/nav.pl-44">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -5683,19 +4748,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_02_Логин">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_02_Логин" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-46" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-46">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -5805,9 +4870,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/nav.pl-47" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/nav.pl-47">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -5881,9 +4946,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-48" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_02_/cgi-bin/login.pl-48">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -5967,7 +5032,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -5977,9 +5042,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/welcome.pl-32" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/welcome.pl-32">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -6038,9 +5103,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/nav.pl-34" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/nav.pl-34">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -6106,9 +5171,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/itinerary.pl-33" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_03_/cgi-bin/itinerary.pl-33">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/itinerary.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -6186,19 +5251,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_04_Отмена_покупки">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_04_Отмена_покупки" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_04_/cgi-bin/itinerary.pl-39" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_04_/cgi-bin/itinerary.pl-39">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/itinerary.pl</stringProp>
@@ -6298,19 +5363,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_05_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC05_05_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/welcome.pl-53" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/welcome.pl-53">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -6377,9 +5442,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/nav.pl-55" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC05_05_/cgi-bin/nav.pl-55">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -6453,22 +5518,22 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC06_Регистрация"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="UC06_Регистрация" enabled="true"/>
         <hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_01_Домашняя страница">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/WebTours/-10" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/WebTours/-10">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -6532,9 +5597,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </ResponseAssertion>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/welcome.pl-13" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/welcome.pl-13">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -6601,9 +5666,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/nav.pl-17" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/nav.pl-17">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -6687,19 +5752,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_02_Кнопка_регистрация">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_02_Кнопка_регистрация" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_02_/cgi-bin/login.pl-111" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_02_/cgi-bin/login.pl-111">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -6733,7 +5798,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </elementProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
                     <stringProp name="Header.name">Referer</stringProp>
@@ -6786,7 +5851,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -6796,9 +5861,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_03_/cgi-bin/login.pl-114" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_03_/cgi-bin/login.pl-114">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -6960,7 +6025,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -6970,9 +6035,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/welcome.pl-116" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/welcome.pl-116">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -7039,9 +6104,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/login.pl-118" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/login.pl-118">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -7056,6 +6121,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                     <stringProp name="Argument.name">intro</stringProp>
                     <stringProp name="Argument.value">true</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
@@ -7107,9 +6173,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/nav.pl-117" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/nav.pl-117">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -7190,19 +6256,19 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_05_Выход">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_05_Выход" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/welcome.pl-26" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/welcome.pl-26">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -7269,9 +6335,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/nav.pl-28" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/nav.pl-28">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -7355,7 +6421,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
           </TestAction>
           <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause">
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Pause" enabled="true">
               <stringProp name="ConstantTimer.delay">5000</stringProp>
               <stringProp name="RandomTimer.range">0</stringProp>
             </UniformRandomTimer>
@@ -7370,7 +6436,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/WebTours/-10">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/WebTours/</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -7436,7 +6502,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/welcome.pl-13">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -7505,7 +6571,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC01_01_/cgi-bin/nav.pl-17">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -7595,13 +6661,13 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_02_Кнопка_регистрация">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_02_Кнопка_регистрация" enabled="true">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_02_/cgi-bin/login.pl-111">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -7700,7 +6766,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_03_/cgi-bin/login.pl-114">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -7844,7 +6910,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                 <boolProp name="UserParameters.per_iteration">false</boolProp>
               </UserParameters>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                 <collectionProp name="Asserion.test_strings">
                   <stringProp name="-1556679168">Thank you, &lt;b&gt;${Login}&lt;/b&gt;, for</stringProp>
                 </collectionProp>
@@ -7868,13 +6934,13 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_04_Продолжить" enabled="true">
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="UC06_04_Продолжить">
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/welcome.pl-116" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/welcome.pl-116">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -7941,9 +7007,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/login.pl-118" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/login.pl-118">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/login.pl</stringProp>
@@ -7958,6 +7024,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
                     <stringProp name="Argument.name">intro</stringProp>
                     <stringProp name="Argument.value">true</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
                 </collectionProp>
               </elementProp>
@@ -8009,9 +7076,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/nav.pl-117" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_04_/cgi-bin/nav.pl-117">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -8102,9 +7169,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
             <boolProp name="TransactionController.includeTimers">false</boolProp>
           </TransactionController>
           <hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/welcome.pl-26" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/welcome.pl-26">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/welcome.pl</stringProp>
@@ -8171,9 +7238,9 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
               </HeaderManager>
               <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/nav.pl-28" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC06_05_/cgi-bin/nav.pl-28">
               <stringProp name="HTTPSampler.domain">localhost</stringProp>
-              <stringProp name="HTTPSampler.port">1080</stringProp>
+              <stringProp name="HTTPSampler.port">${port}</stringProp>
               <stringProp name="HTTPSampler.protocol">http</stringProp>
               <stringProp name="HTTPSampler.contentEncoding">ISO-8859-1</stringProp>
               <stringProp name="HTTPSampler.path">/cgi-bin/nav.pl</stringProp>
@@ -8265,7 +7332,7 @@ vars.put(&apos;cgifields_list&apos;, cgifields_string);</stringProp>
           </hashTree>
         </hashTree>
       </hashTree>
-      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder">
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
         <stringProp name="ProxyControlGui.port">8888</stringProp>
         <collectionProp name="ProxyControlGui.exclude_list">
           <stringProp name="-2063843150">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff|woff2)</stringProp>

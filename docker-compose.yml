@@ -18,6 +18,8 @@ services:
       - "9090:9090"
     networks:
       - monitoring
+    command:
+
 
   grafana:
     image: grafana/grafana:latest
